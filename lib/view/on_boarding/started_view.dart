@@ -47,7 +47,8 @@ class _StartedViewState extends State<StartedView> {
 
                   const Spacer(),
 
-                  MaterialButton(onPressed: (){}, 
+                  MaterialButton(
+                    onPressed: (){}, 
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                     child: Text("Get Started", style: TextStyle(
                     color: TColor.gray, 
