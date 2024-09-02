@@ -11,6 +11,8 @@ class StartedView extends StatefulWidget {
 }
 
 class _StartedViewState extends State<StartedView> {
+
+  bool isChangeColor = false;
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -24,9 +26,7 @@ class _StartedViewState extends State<StartedView> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight),
           ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
+          child:
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -56,9 +56,7 @@ class _StartedViewState extends State<StartedView> {
                     ),
                   ),
                 ],
-              )
-            ],
-          ),
+              ),
     ));
   }
 }
