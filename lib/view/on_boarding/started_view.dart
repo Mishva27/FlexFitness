@@ -1,3 +1,4 @@
+import 'package:flexfitness/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
@@ -44,24 +45,16 @@ class _StartedViewState extends State<StartedView> {
                     color: TColor.gray, 
                     fontSize: 18, 
                   ),),
-
                   const Spacer(),
-
                   SafeArea(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: MaterialButton(
-                        onPressed: (){}, 
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                        child: Text("Get Started", style: TextStyle(
-                        color: TColor.gray, 
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700)
-                        ),
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                      child: RoundButton(
+                        title: "Get Started", 
+                        onPressed: () {}
                       ),
                     ),
                   ),
-
                 ],
               )
             ],
