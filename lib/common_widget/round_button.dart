@@ -17,17 +17,24 @@ class RoundButton extends StatelessWidget {
           begin: Alignment.centerLeft, 
           end: Alignment.centerRight),
           borderRadius: BorderRadius.circular(25),
+          boxShadow: type == RoundButtonType.bgGradient ? const [BoxShadow(color: Colors.black, blurRadius: 2, offset: Offset(0, 2))] : null
       ),
       child: MaterialButton(
                           onPressed: onPressed, 
                           height: 50,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                           textColor: TColor.primaryColor1,
-                          color: Colors.transparent,//TColor.white, 
+                          minWidth: double.maxFinite, 
                           elevation: type == RoundButtonType.bgGradient ? 0 :1,
-                          minWidth: double.maxFinite,
+                          color: type == RoundButtonType.bgGradient ? Colors.transparent : TColor.white,
+                          
       
-                          child: ShaderMask(
+                          child: type == RoundButtonType.bgGradient ? Text(title, 
+                            style: TextStyle(
+                              color: TColor.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700)
+                            ): ShaderMask(
                             blendMode: BlendMode.srcIn,
                             shaderCallback: (bounds){
                               return LinearGradient(

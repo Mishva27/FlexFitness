@@ -1,4 +1,5 @@
 import 'package:flexfitness/common_widget/round_button.dart';
+import 'package:flexfitness/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
@@ -21,10 +22,10 @@ class _StartedViewState extends State<StartedView> {
       body: Container(
         width: media.width,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: isChangeColor ? LinearGradient(
                     colors: TColor.primaryG,
                     begin: Alignment.topLeft,
-                    end: Alignment.bottomRight),
+                    end: Alignment.bottomRight): null,
           ),
           child:
               Column(
@@ -51,7 +52,19 @@ class _StartedViewState extends State<StartedView> {
                       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                       child: RoundButton(
                         title: "Get Started", 
-                        onPressed: () {}
+                        type: isChangeColor ? RoundButtonType.textGradient : RoundButtonType.bgGradient ,
+                        onPressed: () {
+
+                          if(isChangeColor){
+                            //Go next screen
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const OnBoardingView()));
+                          }else{
+                            //Change Color
+                            setState(() {
+                              isChangeColor = true;
+                            });
+                          }
+                        }
                       ),
                     ),
                   ),
