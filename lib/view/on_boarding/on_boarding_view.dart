@@ -1,5 +1,6 @@
 import 'package:flexfitness/common/color_extension.dart';
 import 'package:flexfitness/common_widget/on_boarding_page.dart';
+import 'package:flexfitness/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -107,6 +108,7 @@ List pageArr = [
               
                   }else{
                       const Text("Open Welcome Screen");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpView()));
                   }
                 }),
                ),
